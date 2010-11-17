@@ -1,0 +1,11 @@
+{
+	testSuite:'ui',					//For testing purposes - a named suite to only run those tests
+	
+	endpoint:'http://localhost:8080/', 	// you might have a configuration switch on a dev versus live server
+										// This is a test of that scenario
+	
+	nested: {							
+		value:'foobar',					//you could also have nested configuration, since it's just JSON
+		collection: ['foo','bar',true]
+	}
+}
