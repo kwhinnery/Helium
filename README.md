@@ -15,6 +15,11 @@ for:
 Helium is maintained separately from Appcelerator Titanium, and is not currently supported by Appcelerator through any premium
 or community support offerings (though we're happy to help the community out as best we can).
 
+## Running The Tests
+
+Rename `Resources/tests/config.js.example` to `Resources/tests/config.js` - empty string in `TEST_SUITE` indicates that full test
+suite should be run - you can specify a suite here as well.
+
 ## User Guide
 
 COMING SOON
