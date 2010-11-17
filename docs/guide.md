@@ -53,7 +53,7 @@ To use all Helium functionality, just Ti.include the file into the current conte
 
 Helium allows you to create Titanium widgets and custom components, styled by Property Sets (psets).  psets are very similar
 to CSS (or JSS) classes, but since they're declared in JavaScript, you can use variables and helper functions while declaring them,
-which is incredibly powerful.  Default psets can be assigned for an object type, or they can be used similarly to style classes.  
+which is incredibly powerful.  Default psets can be assigned for an object type, or they can be used similarly to style classes. 
 Objects can be created using multiple pset declarations, all merged together with the latter arguments taking precedence 
 over the former.  Objects in the `Ti.UI` namespace can be created and styled like so:
 
