@@ -4,7 +4,7 @@ Helium is a helper library for [Appcelerator Titanium](http://www.appcelerator.c
 for:
 
 * Component-oriented UI construction
-* Externalizing UI properties by OS, locale, and screen density
+* Externalizing and re-using UI properties
 * Smarter script loading
 * Visual and non-visual unit testing
 * JavaScript-y localization (coming soon)
