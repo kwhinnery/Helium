@@ -15,19 +15,13 @@ for:
 Helium is maintained separately from Appcelerator Titanium, and is not currently supported by Appcelerator through any premium
 or community support offerings (though we're happy to help the community out as best we can).
 
-## Running The Tests
+## Documentation
+
+Check out the docs folder in this repository for API documentation and usage instructions.
+
+## Running Helium
 
 Rename `Resources/tests/config.js.example` to `Resources/tests/config.js` - empty string in `TEST_SUITE` indicates that full test
-suite should be run - you can specify a suite here as well.
-
-## User Guide
-
-COMING SOON
-
-## API Documentation
-
-When in doubt, don't fear the source!  It's reasonably well commented, so it should be fairly straightforward how
-all the API functions work.  But here's the official (Hopefully more useful) API docs:
-
-COMING SOON
+suite should be run - you can specify a suite here as well.  If you set `RUNDEMO` to true, you'll launch the Helium demo app
+instead.
 

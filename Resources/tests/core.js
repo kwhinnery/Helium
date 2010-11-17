@@ -254,13 +254,15 @@
 			var val = he.locale({
 				en:1,
 				es:2,
-				def:3
+				def:3,
+				'en-GB':4
 			});
 			
 			var func = he.locale({
 				en:function() {return 1;},
 				es:function() {return 2;},
-				def:function() {return 3;}
+				def:function() {return 3;},
+				'en-GB':function() {return 4;}
 			});
 			
 			var locale = Ti.Platform.locale, valCorrect = false, funcCorrect = false;
@@ -272,6 +274,10 @@
 			else if (locale == 'es') {
 				valCorrect = val==2; 
 				funcCorrect = func==2;
+			}
+			else if (locale == 'en-GB') {
+				valCorrect = val==4; 
+				funcCorrect = func==4;
 			}
 			else {
 				valCorrect = val==3; 
