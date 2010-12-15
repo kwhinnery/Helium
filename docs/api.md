@@ -238,8 +238,13 @@ Create a persistent JavaScript object between app launches.  Uses JSON to store 
 		title: 'CEO'
 	};
 	
-	he.saveObject(profile);
+	he.saveObject('savedProfile',profile);
 	
 ### he.loadObject(/\*String\*/ key) : Object
 
 Load a saved JavaScript object by the given key - will only work with objects saved via `he.saveObject`.
+
+#### Example
+
+	var profile = he.loadObject('savedProfile');
+	Ti.API.info(JSON.stringify(profile));
