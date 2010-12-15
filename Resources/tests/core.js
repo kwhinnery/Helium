@@ -26,7 +26,7 @@
 				}
 			});
 			he.test.assert(orig.gang.car=='Oldsmobile','Testing overriding nested property');
-			he.test.assert(orig.gang.members[0]=='Scooby','Extend should not have touched this array');
+			he.test.assert(orig.gang.members==undefined,'Extend should not have touched this array');
 		}
 	});
 	

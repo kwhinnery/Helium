@@ -1,7 +1,7 @@
 # Helium
 
-Helium is a helper library for [Appcelerator Titanium](http://www.appcelerator.com).  Helium provides facilities
-for:
+Helium is a helper library for [Appcelerator Titanium](http://www.appcelerator.com).  Helium stands back to back with Titanium to rip off
+the programming equivalent of a soaring metal guitar harmony.  Helium provides facilities for:
 
 * Component-oriented UI construction
 * Externalizing and re-using UI properties
@@ -9,7 +9,8 @@ for:
 * Visual and non-visual unit testing
 * JavaScript-y localization (coming soon)
 * Ajax (coming soon)
-* Utilities for persisting JavaScript object graphs, application level messaging, and more
+* Utilities for persisting JavaScript object graphs 
+* Improved application level messaging
 * Spontaneous generation of rainbows and unicorns
 
 Helium is maintained separately from Appcelerator Titanium, and is not currently supported by Appcelerator through any premium
