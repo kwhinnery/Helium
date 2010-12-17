@@ -197,7 +197,7 @@
 			var osname = Ti.Platform.osname;
 			
 			var val = he.pt(2,3,1), worked = false;
-			if (osname == 'iphone' || (osname == 'android' && density == 'medium')) {
+			if (osname == 'iphone' || osname == 'ipad' || (osname == 'android' && density == 'medium')) {
 				worked = val==2;
 			}
 			else if (osname == 'android' && density == 'high') {
