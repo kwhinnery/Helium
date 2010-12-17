@@ -1,4 +1,6 @@
 tmp
 build
+!build/android/.gitignore
+!build/iphone/.gitignore
 Resources/tests/config.js
 .DS_Store
