@@ -155,6 +155,30 @@ Make a test assertion, with a description of the condition you are testing.  Tes
 		}
 	});
 	
+### he.test.assertTypeof(/\*Polymorphic\*/ value, /\*String\*/ type, /\*String\*/ description)
+
+Asserts the value is of the passed type. Can pass 'array' as type and it will use he.isArray to test type.
+
+#### Example
+
+	he.test.add({
+		name: 'Test thing is object',
+		suite: 'things',
+		unit: function() {
+			var thing = {};
+			he.test.assertTypeof(thing, 'object', 'thing is object!')
+		}
+	})
+	
+	he.test.add({
+		name: 'Test foobar is array',
+		suite: 'things',
+		unit: function() {
+			var foobar = [];
+			he.test.assertTypeof(foobar, 'array', 'foobar is array!')
+		}
+	})
+	
 ### he.test.run(/\*String [optional]\*/ suite)
 
 Run unit tests, and print output to the console and screen (in the form of a summary alert).  Optionally takes a string, which will restrict the tests run to a given suite.  If suite is undefined or an empty string, all tests will be run.
