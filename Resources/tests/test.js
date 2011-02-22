@@ -30,4 +30,19 @@
 			]
 		}
 	});
+	
+	he.test.add({
+		name: 'Testing tyepof assert',
+		suite: 'test',
+		unit: function () {
+			he.test.assertTypeof({}, 'object', 'Should be typeof object');
+			he.test.assertTypeof('foobar', 'string', 'Should be typeof string');
+			he.test.assertTypeof(123456, 'number', 'Should be typeof number');
+			
+			var blah;
+			he.test.assertTypeof(blah, 'undefined', 'Should be typeof undefined');
+			
+			he.test.assertTypeof([], 'array', 'Should be typeof array');
+		}
+	});
 })();

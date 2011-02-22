@@ -73,6 +73,20 @@ super simple unit testing framework
 			Ti.API.error('[Helium] UNIT TEST FAILED: '+description);
 		}
 	};
+	
+	//Assert that the passed value is of the correct type, does accept 'array' as a type and will use he.isArray to check arrays.
+	he.test.assertTypeof = function(/*Polymorphic*/ value, /*String*/ type, /*String*/ description) {
+		if (type === 'object' ||
+			type === 'number' ||
+			type === 'string' ||
+			type === 'undefined') {
+			return he.test.assert((typeof value === type), description);
+		} else if (type === 'array') {
+			return he.test.assert(he.isArray(value), description);
+		} else {
+			Ti.API.error('[Helium] invalid assertTypeof parameter passed, use: object, number, string or array');
+		}
+	};
 
 	//Run all tests, or the given suite
 	he.test.run = function(/*String [optional]*/ suite) {
