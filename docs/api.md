@@ -76,6 +76,24 @@ Add a unit test to the set of tests to be run.  `args` contains the necessary el
 		}
 	});
 	
+	//Asynchronous non-visual test with failure after specified timeout length
+	he.test.add({
+		name:'Test Ajax',
+		suite:'network',
+		asynch:true,
+		fail: "Message will be displayed if async test did not complete after specified timeout.",
+		timeout: 1000, //Add failure if he.test.done() has not called after 1000ms.
+		unit: function() {
+			var xhr = Ti.Network.createHTTPClient();
+			xhr.onload = function() {
+				he.test.assert(true,'Network call came back');
+				he.test.done();
+			};
+			xhr.open('GET','http://www.google.com');
+			xhr.send();
+		}
+	});
+	
 	//Visual test
 	he.test.add({
 		name:'Testing UI colors',

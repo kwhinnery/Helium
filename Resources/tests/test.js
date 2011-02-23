@@ -12,6 +12,17 @@
 	});
 	
 	he.test.add({
+		name: 'Test async failure after timeout',
+		suite: 'test',
+		asynch: true,
+		fail: 'Async test did fail as expected and error was logged after timeout.',
+		timeout: 500,
+		unit: function () {
+			// Don't call he.test.done() and we should get an error to signify the test did not complete withing the timeout (in this case 500ms).
+		}
+	});
+	
+	he.test.add({
 		name:'Testing visual test functionality',
 		suite:'test',
 		visual: {

@@ -30,7 +30,9 @@ super simple unit testing framework
 	successes = 0,
 	failures = 0,
 	warnings = 0,
-	executing = false;
+	executing = false,
+	asyncFailTimeout; // Holds a JS timeout object that will be exectued after a defined period if an async test is not completed.
+	
 	/*
 	Add a test to the unit test suite.  Possible arguments are:
 	{
@@ -52,7 +54,14 @@ super simple unit testing framework
 	};
 
 	//Flip a boolean flag to indicate a test has completed running
-	he.test.done = function() {executing=false;};
+	he.test.done = function() {
+		executing=false;
+		
+		// Test is done, if we have a failure timeout clear it, async test went ok.
+		if (asyncFailTimeout != undefined) {
+			clearTimeout(asyncFailTimeout);
+		}
+	};
 
 	//Insert a warning
 	he.test.warn = function(/*String*/ description) {
@@ -212,7 +221,26 @@ super simple unit testing framework
 
 					if (tst.unit != undefined) {
 						tst.unit.call(tst);
-						if (!tst.asynch) {executing = false;}
+						if (!tst.asynch) {
+							executing = false;
+						}
+						else {
+							// Async test has a fail message and timeout, check that he.test.done() has been called by callback after timeout time.
+							// This means that in async tests if the test is not completed within the timeout time (i.e. callback has not been fired) we mark the test as a failure.
+							if (tst.fail != undefined && tst.timeout != undefined) {
+								asyncFailTimeout = setTimeout(function () {
+									if (executing) { // It's still executing after specified timeout period.
+										// Give it a failure status.
+										failures++;
+										failureMessages.push(tst.fail);
+										Ti.API.error('[Helium] UNIT TEST FAILED: '+tst.fail);
+
+										// Manually mark the test as completed.
+										he.test.done();
+									}
+								}, tst.timeout);
+							}
+						}
 						testsExecuted++;
 					}
 					else { //assuming visual test in this case
