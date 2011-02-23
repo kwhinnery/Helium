@@ -49,6 +49,7 @@
 			he.test.assertTypeof({}, 'object', 'Should be typeof object');
 			he.test.assertTypeof('foobar', 'string', 'Should be typeof string');
 			he.test.assertTypeof(123456, 'number', 'Should be typeof number');
+			he.test.assertTypeof(true, 'boolean', 'Should be typeof boolean');
 			
 			var blah;
 			he.test.assertTypeof(blah, 'undefined', 'Should be typeof undefined');

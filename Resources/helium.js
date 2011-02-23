@@ -88,11 +88,13 @@ super simple unit testing framework
 		if (type === 'object' ||
 			type === 'number' ||
 			type === 'string' ||
+			type === 'boolean' ||
 			type === 'undefined') {
 			return he.test.assert((typeof value === type), description);
 		} else if (type === 'array') {
 			return he.test.assert(he.isArray(value), description);
 		} else {
+			he.test.assert(false, description);
 			Ti.API.error('[Helium] invalid assertTypeof parameter passed, use: object, number, string or array');
 		}
 	};
