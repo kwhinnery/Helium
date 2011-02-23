@@ -235,7 +235,7 @@ super simple unit testing framework
 										// Give it a failure status.
 										failures++;
 										failureMessages.push(tst.fail);
-										Ti.API.error('[Helium] UNIT TEST FAILED: '+tst.fail);
+										Ti.API.error('[Helium] UNIT TEST FAILED (after: '+tst.timeout+'): '+tst.fail);
 
 										// Manually mark the test as completed.
 										he.test.done();
