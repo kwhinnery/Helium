@@ -501,3 +501,44 @@ Helpers for registering and styling Titanium and app-specific components
 		}
 	};
 })();
+
+// Titanium doesn't like it if you done use their standard way of creating objects, 
+// this keeps Titanium nice and happy
+Ti.UI.create2DMatrix();
+//Ti.UI.iOS.create3DMatrix();
+Ti.UI.createActivityIndicator();
+Ti.UI.createAlertDialog();
+Ti.UI.createAnimation();
+Ti.UI.createButton();
+Ti.UI.createButtonBar();
+Ti.UI.createEmailDialog();
+Ti.UI.createImageView();
+Ti.UI.createLabel();
+Ti.UI.createOptionDialog();
+Ti.UI.createPicker();
+Ti.UI.createPickerColumn();
+Ti.UI.createPickerRow();
+Ti.UI.createProgressBar();
+Ti.UI.createScrollView();
+Ti.UI.createScrollableView();
+Ti.UI.createSearchBar();
+Ti.UI.createSlider();
+Ti.UI.createSwitch();
+Ti.UI.createTab();
+Ti.UI.createTabGroup();
+Ti.UI.createTableView();
+Ti.UI.createTableViewRow();
+Ti.UI.createTableViewSection();
+Ti.UI.createTextArea();
+Ti.UI.createTextField();
+Ti.UI.createToolbar();
+Ti.UI.createView();
+Ti.UI.createWebView();
+Ti.UI.createWindow();
+Ti.Facebook.createLoginButton();
+if(Ti.Platform.osname != "android"){
+	Ti.UI.createTabbedBar();
+	Ti.UI.createDashboardView();
+	Ti.UI.createDashboardItem();
+	Ti.UI.createCoverFlowView();
+}
