@@ -2,7 +2,7 @@
 Titanium.UI.setBackgroundColor('#fff');
 
 //Load test configuration
-Ti.include('/tests/config.js');
+//Ti.include('/tests/config.js');
 
 //launch unit tests or demo
 var demo = (typeof(RUNDEMO)!='undefined') ? RUNDEMO : false;
