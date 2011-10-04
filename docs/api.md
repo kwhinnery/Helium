@@ -76,6 +76,24 @@ Add a unit test to the set of tests to be run.  `args` contains the necessary el
 		}
 	});
 	
+	//Asynchronous non-visual test with failure after specified timeout length
+	he.test.add({
+		name:'Test Ajax',
+		suite:'network',
+		asynch:true,
+		fail: "Message will be displayed if async test did not complete after specified timeout.",
+		timeout: 1000, //Add failure if he.test.done() has not called after 1000ms.
+		unit: function() {
+			var xhr = Ti.Network.createHTTPClient();
+			xhr.onload = function() {
+				he.test.assert(true,'Network call came back');
+				he.test.done();
+			};
+			xhr.open('GET','http://www.google.com');
+			xhr.send();
+		}
+	});
+	
 	//Visual test
 	he.test.add({
 		name:'Testing UI colors',
@@ -154,6 +172,30 @@ Make a test assertion, with a description of the condition you are testing.  Tes
 			he.test.assert(titaniumIsAwesome,'Titanium is an awesome platform');
 		}
 	});
+	
+### he.test.assertTypeof(/\*Polymorphic\*/ value, /\*String\*/ type, /\*String\*/ description)
+
+Asserts the value is of the passed type. Can pass 'array' as type and it will use he.isArray to test type.
+
+#### Example
+
+	he.test.add({
+		name: 'Test thing is object',
+		suite: 'things',
+		unit: function() {
+			var thing = {};
+			he.test.assertTypeof(thing, 'object', 'thing is object!')
+		}
+	})
+	
+	he.test.add({
+		name: 'Test foobar is array',
+		suite: 'things',
+		unit: function() {
+			var foobar = [];
+			he.test.assertTypeof(foobar, 'array', 'foobar is array!')
+		}
+	})
 	
 ### he.test.run(/\*String [optional]\*/ suite)
 
