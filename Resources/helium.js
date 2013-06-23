@@ -537,7 +537,11 @@ Helpers for registering and styling Titanium and app-specific components
 		}
 		else {
 			try {
-				return Ti.UI['create'+viewType](args);
+				if(viewType.indexOf('.') !== -1){
+					return Ti.UI[viewType.split('.')[0]]['create'+viewType.split('.')[1]](args);
+				}else{
+					return Ti.UI['create'+viewType](args);				
+				}
 			} catch(e) {
 				Ti.API.error('[Helium.create] No constructor found for type: '+viewType);
 				return null;

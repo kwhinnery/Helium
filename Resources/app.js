@@ -31,8 +31,10 @@ else {
 		'/helium.js',
 		'/tests/test.js',
 		'/tests/core.js',
+		'/tests/ui_platform_specific.js',
 		'/tests/ui.js'
 	);
+	
 	var suite = (typeof(TEST_SUITE)!='undefined') ? TEST_SUITE : '';
 	he.test.run(suite);
 }
